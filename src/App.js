@@ -30,7 +30,7 @@ const App = () =>{
     }
 
     useEffect(() => {
-        searchgames('Pillars of eternity');
+        searchgames('Deus ex');
 
 
     }, []);
