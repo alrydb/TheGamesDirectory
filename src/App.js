@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import './app.css'
 import SearchIcon from './search.svg'
 import GameCard from './GameCard';
+import LoadingSpinner from './LoadingSpinner';
 
 const API_KEY = '6a44dff3dffe463f8a65d367f3299ce0';
 
@@ -22,10 +23,9 @@ const App = () =>{
     const [searchTerm, setSearchTerm] = useState('');
 
     const searchgames = async (name) =>{
-        const response = await fetch(`${API_URL}&search=${name}&page_size=4`);
+        const response = await fetch(`${API_URL}&search=${name}&page_size=8`);
         const data = await response.json();
-       
-
+    
         setgames(data.results);
     }
 
@@ -44,11 +44,18 @@ const App = () =>{
                 placeholder='Search for games'
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyPress={event => {
+                    if (event.key === 'Enter') {
+                      searchgames(searchTerm)
+                      console.log("enter pressed")
+                    }
+                  }}
                 />
                 <img
                 src={SearchIcon}
                 alt="search"
                 onClick={() => searchgames(searchTerm)}
+              
                 />
             </div>
 

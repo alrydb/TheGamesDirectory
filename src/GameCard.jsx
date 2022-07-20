@@ -16,7 +16,7 @@ const GameCard = ({game}) => {
                 </p>
             </div>
 
-            <div>
+            <div className='game-image'>
                 <img src={game.background_image !== 'N/A' ? game.background_image : 'https://via.placeholder.com/400' } alt={game.score}></img>
             </div>
 
@@ -30,7 +30,7 @@ const GameCard = ({game}) => {
  
 
 
-                <table>
+                <table className='platform-list'>
                 <tbody>
                     <tr>
                             
