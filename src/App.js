@@ -31,7 +31,9 @@ const App = () =>{
        
     
         setgames(data.results);
+
         setLoading(false)
+       
     }
 
     useEffect(() => {
@@ -79,10 +81,34 @@ const App = () =>{
 
                 games?.length > 0
                 ? (
-                    <div className="container">
+                    <div className="container" >
+
+                       
+                        
+                         {(() => {
+                            let images = []
+                            for(let i = 0; i < games?.length; i++)
+                            {
+                                    images.push(games[i].background_image)
+                            }
+
+                            console.log(images[5])
+                        
+                        })()}
+                         
                          
                          {games.map((game) =>
                          (<GameCard game={game}/> ))}
+
+
+                         {
+                           console.log(games[2].background_image)
+                         }
+
+                       
+
+                       
+                         
                     </div>
                 ) : (
 

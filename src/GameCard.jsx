@@ -1,4 +1,6 @@
 import React from 'react';
+import OnImagesLoaded from 'react-on-images-loaded';
+import {useState} from 'react';
 
 
 
@@ -6,10 +8,12 @@ import React from 'react';
 
 
 const GameCard = ({game}) => {
+    const [showImages, setShowImages] = useState(false);
+    
 
     return (
-        <div className="container">
-        <div className='movie'>
+        <div className="container" >
+        <div className='movie' onClick={ () => alert("clicked")} >
             <div>
                 <p>
                     {game.released}
@@ -17,8 +21,18 @@ const GameCard = ({game}) => {
             </div>
 
             <div className='game-image'>
-                <img src={game.background_image !== 'N/A' ? game.background_image : 'https://via.placeholder.com/400' } alt={game.score}></img>
+               
+            {/* <OnImagesLoaded
+             onLoaded={() => setShowImages(true)}
+                //  onTimeout={() => this.setState({ showImages: true })}
+                //  timeout={7000}
+                    >
+           
+                <img style={showImages ? {visibility : 'visible'} : {visibility : 'hidden'}} src={game.background_image !== 'N/A' ? game.background_image : 'https://via.placeholder.com/400' } alt={game.score}></img>
+            </OnImagesLoaded> */}
+            <img src={game.background_image !== 'N/A' ? game.background_image : 'https://via.placeholder.com/400' } alt={game.score}></img>
             </div>
+            
 
             <div>
                 <span>{
