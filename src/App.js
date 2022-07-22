@@ -5,6 +5,8 @@ import SearchIcon from './search.svg'
 import GameCard from './GameCard';
 import ClipLoader from "react-spinners/ClipLoader";
 
+
+
 const API_KEY = '6a44dff3dffe463f8a65d367f3299ce0';
 
 const API_URL = 'https://api.rawg.io/api/games?&key=' + API_KEY;
@@ -22,6 +24,7 @@ const App = () =>{
     const [loading, setLoading] = useState(false);
 
     const [games, setgames] = useState([]);
+    const [images, setImages] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
     const searchgames = async (name) =>{
@@ -47,12 +50,18 @@ const App = () =>{
             <h1>The Games Directory</h1>
             {
                 loading ? (
+                    <>
                     <ClipLoader color={"#3C4947"} loading={loading}  size={150} />
+                    <p style={{color:"white"}}>Searching</p>
+                    </>
+                    
+                    
+                    
                 )
 
                 : (
+                    <>
                     
-
                     <div className='search'>
                         <input
                         placeholder='Search for games'
@@ -72,6 +81,17 @@ const App = () =>{
                       
                         />
                     </div>
+
+                    <div className="container" >
+                         
+                         {games.map((game) =>
+                         (<GameCard game={game}/> ))}
+                           
+                    </div>
+                    
+                    </>
+
+                    
                 )
             }
             
@@ -79,44 +99,19 @@ const App = () =>{
 
             {
 
-                games?.length > 0
+                games?.length <= 0
                 ? (
-                    <div className="container" >
 
-                       
-                        
-                         {(() => {
-                            let images = []
-                            for(let i = 0; i < games?.length; i++)
-                            {
-                                    images.push(games[i].background_image)
-                            }
+                    <div className='empty'>
+                    <h2>No games found</h2>
 
-                            console.log(images[5])
-                        
-                        })()}
-                         
-                         
-                         {games.map((game) =>
-                         (<GameCard game={game}/> ))}
-
-
-                         {
-                           console.log(games[2].background_image)
-                         }
-
-                       
-
-                       
-                         
                     </div>
+
+                    
                 ) : (
-
-                        <div className='empty'>
-                                <h2>No games found</h2>
-
-                        </div>
-                )
+                    <></>
+                        
+                ) 
 
 
 
