@@ -13,7 +13,7 @@ const GameCard = ({game}) => {
 
     return (
         <div className="container" >
-        <div className='movie' onClick={ () => alert("clicked")} >
+        <div className='movie' onClick={ () => alert("clicked " + "id: " + game.id + " name: " + game.name)} >
             <div>
                 <p>
                     {game.released}
@@ -78,7 +78,8 @@ const GameCard = ({game}) => {
                                 '/icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Xbox One" ?
                                 '/icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Xbox Series S/X" ?
                                 '/icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Linux" ?
-                                '/icons/icons8-linux-30.png' :
+                                '/icons/icons8-linux-30.png' : game.platforms[i].platform.name === "Web" ?
+                                'icons/icons8-web-32.png' :
     
                                 
                                 

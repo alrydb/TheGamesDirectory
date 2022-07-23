@@ -203,6 +203,11 @@ img {
   cursor: default;
 }
 
+.checkbox{
+  margin-right: 60%;
+  margin-top: 2%;
+}
+
 @media screen and (max-width: 1000px) {
   .app {
     padding: 4rem 2rem;
