@@ -74,22 +74,7 @@ const App = () =>{
     return (
         <div className='app'>
             <h1>The Games Directory</h1>
-            <p className={filtersVisible ? "arrow up" : "arrow down"} onClick={() => 
-                
-              {
-                if(filtersVisible)
-                {
-                    setFiltersVisible(false)
-                }
-                else
-                {
-                    
-                    setFiltersVisible(true)
-                }
-              }
-                
-                
-                }></p>
+          
             {
                 loading ? (
                     <>
@@ -121,8 +106,25 @@ const App = () =>{
                                 )}
                             </CheckboxGroup> */}
 
+                            <p className={filtersVisible ? "arrow up" : "arrow down"} onClick={() => {
+                                if (filtersVisible) {
+                                    setFiltersVisible(false)
+                                }
+                                else {
+
+                                    setFiltersVisible(true)
+                                }
+                            }
+
+
+                            }></p>
+
 
                             {
+                                
+
+
+
                                      filtersVisible  == true ?
 
                                     (
@@ -137,7 +139,7 @@ const App = () =>{
                                             }
                                             checked={filters ==="game"}
                                             
-                                        />Games
+                                        />   Games
                                         <input className='filter-button'
                                             value="developer"
                                             type="radio"
@@ -147,7 +149,7 @@ const App = () =>{
                                                 }
                                             checked={filters ==="developer"}
                                             
-                                        />Developer
+                                        />   Developer
                                     </div>
                                     )
                                      
