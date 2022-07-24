@@ -31,6 +31,7 @@ const App = () =>{
     const [images, setImages] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filters, setFilters] = useState([]);
+    const [filtersVisible, setFiltersVisible] = useState(false);
 
     const searchgames = async (name) =>{
         setLoading(true)
@@ -65,6 +66,7 @@ const App = () =>{
 
     useEffect(() => {
         searchgames('');
+        setFilters("game");
        
 
     }, []);
@@ -72,6 +74,22 @@ const App = () =>{
     return (
         <div className='app'>
             <h1>The Games Directory</h1>
+            <p className={filtersVisible ? "arrow up" : "arrow down"} onClick={() => 
+                
+              {
+                if(filtersVisible)
+                {
+                    setFiltersVisible(false)
+                }
+                else
+                {
+                    
+                    setFiltersVisible(true)
+                }
+              }
+                
+                
+                }></p>
             {
                 loading ? (
                     <>
@@ -85,21 +103,66 @@ const App = () =>{
 
                 : (
                     <>
-                            <CheckboxGroup name="filters" value={filters} onChange={setFilters}>
+                            {/* <CheckboxGroup name="filters" value={filters} onChange={setFilters}>
                                 {(Checkbox) => (
                                     <>
-                                        <label className='checkbox'>
+                                        <label className='checkbox' style={{color:"white"}}>
                                             <Checkbox value="game" /> Games
                                         </label>
-                                        <label className='checkbox'>
+                                        <label className='checkbox' style={{color:"white"}}>
                                             <Checkbox value="developer" /> Developer
                                         </label>
+
+                                    
+
+                                        
                                     
                                     </>
                                 )}
-                            </CheckboxGroup>
+                            </CheckboxGroup> */}
+
+
                             {
-                                filters[0] === "game" ? 
+                                     filtersVisible  == true ?
+
+                                    (
+                                        <div className='filters'>
+                                        <input className='filter-button' 
+                                           
+                                            value="game"
+                                            type="radio"
+                                            name="game"
+                                            onChange={(e) =>
+                                            setFilters("game")
+                                            }
+                                            checked={filters ==="game"}
+                                            
+                                        />Games
+                                        <input className='filter-button'
+                                            value="developer"
+                                            type="radio"
+                                            name="developer"
+                                            onChange={(e) =>
+                                                setFilters("developer")
+                                                }
+                                            checked={filters ==="developer"}
+                                            
+                                        />Developer
+                                    </div>
+                                    )
+                                     
+                                     
+                                     :
+                                     null
+
+
+                            }
+                           
+
+
+
+                            {
+                                filters === "game" ? 
                                 <>
                                  <div className='search'>
                                 <input
