@@ -72,6 +72,7 @@ const App = () =>{
     }, []);
 
     return (
+        <>
         <div className='app'>
             <h1>The Games Directory</h1>
           
@@ -235,7 +236,7 @@ const App = () =>{
         
                             }
                             
-                   
+                            
                
                     
                     </>
@@ -271,6 +272,13 @@ const App = () =>{
 
 
         </div>
+        <div className='footer'>
+
+        <p>Icons representing platforms e.g xbox, playstation etc downloaded from icons-8.</p>
+        <a href="https://icons8.com">Platform icons, e.g Playstation, Xbox, downloaded from Icons8.com</a> 
+
+        </div>
+        </>
     );
 }
 

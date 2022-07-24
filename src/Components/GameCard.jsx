@@ -13,7 +13,7 @@ const GameCard = ({game}) => {
 
     return (
         <div className="container" >
-        <div className='movie' onClick={ () => alert("clicked " + "id: " + game.id + " name: " + game.name)} >
+        <div className='game' onClick={ () => alert("clicked " + "id: " + game.id + " name: " + game.name)} >
             <div>
                 <p>
                     {game.released}
