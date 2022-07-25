@@ -1,49 +1,24 @@
 import React from 'react';
 import OnImagesLoaded from 'react-on-images-loaded';
 import {useState} from 'react';
-import GameInfoCard from './GameInfoCard';
 
 
 
 
 
 
-const GameCard = ({game}) => {
+const GameInfoCard = ({game}) => {
     const [showImages, setShowImages] = useState(false);
-    const [showInfo, setShowInfo] = useState(false);
     
 
     return (
-
-        <>
-
-        {
-
-                
-                <div className="container" >
-
-                    <div className={showInfo ? "game-info" : "game"}onClick={() => {
-                        
-                        if(!showInfo)
-                        {
-                            setShowInfo(true)
-                        }
-                       
-                        
-                        }} >
-                        <div>
-                            <p style={showInfo ? {visibility : 'hidden'} : {visibility : 'visible'}}>
-                                 {game.released}
-                             </p>
-                             <p style={showInfo ?  {visibility : 'visible',} : {visibility : 'hidden'}} className="game-info-button" onClick={() =>{
-                                 if(showInfo)
-                                 {
-                                     setShowInfo(false)
-                                 }
-                             }}>
-                                 x
-                             </p>
-                    </div>
+        <div className="container" >
+        <div className='game-info' onClick={ () => alert("clicked " + "id: " + game.id + " name: " + game.name)} >
+            <div>
+                <p>
+                    {game.released}
+                </p>
+            </div>
 
             <div className='game-image'>
                
@@ -136,16 +111,6 @@ const GameCard = ({game}) => {
             </table>
 
 
-            <div style={showInfo ? {visibility : 'visible'} : {visibility : 'hidden'}}>
-                
-                <p>Release date: {game.released !== null ? game.released : "N/A"}</p>
-                <p>Rating: {game.ratings[0] !== undefined ? game.ratings[0].title : "Not rated"}</p>
-                <p>Metacritic score: {game.metacritic !== null ? game.metacritic : "N/A"}</p>
-                <p>Average playtime: {game.playtime !== 0 ? game.playtime + " hour(s)" : "N/A"}</p>
-
-            </div>
-
-
             
 
             
@@ -153,25 +118,16 @@ const GameCard = ({game}) => {
 
 
                
-        </div>   
+            </div>   
 
         </div>
     </div>
-
-            
-        }
-        
-       
-
-
-        
-    </>
 
     );
 
 }
 
-export default GameCard
+export default GameInfoCard
 
 
 
