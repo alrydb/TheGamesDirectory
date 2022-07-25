@@ -63,7 +63,7 @@ const GameCard = ({game}) => {
                                 // p.push(<td key={i}>{game.platforms[i].platform.name}</td>);
     
     
-                                p.push(<img key={i} style={{width:32,height:32, margin:4 }} title={game.platforms[i].platform.name} src={game.platforms[i].platform.name === "PC" ? 
+                                p.push(<img key={i} style={{width:24,height:24, margin:4 }} title={game.platforms[i].platform.name} src={game.platforms[i].platform.name === "PC" ? 
                                 '/icons/icons8-windows-10-30.png' : game.platforms[i].platform.name === "macOS" ? 
                                 '/icons/icons8-apple-logo-64.png' : game.platforms[i].platform.name === "PlayStation 3" ?
                                 '/icons/icons8-playstation-3-logo-48.png': game.platforms[i].platform.name === "PlayStation 2" ?

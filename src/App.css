@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Mukta");
 
 * {
   margin: 0;
@@ -10,10 +11,11 @@
 :root {
   --font-roboto: "Roboto Slab", serif;
   --font-raleway: "Raleway", sans-serif;
+  --font-mukta: "Mukta";
 }
 
 body {
-  font-family: var(--font-roboto);
+  font-family: var(--font-mukta);
   background-color: #212426;
   /* background-color: #2f0a3a; */
 }
@@ -61,7 +63,7 @@ h1 {
   flex: 1;
   border: none;
   font-size: 1.5rem;
-  font-family: var(--font-raleway);
+  font-family: var(--font-mukta);
   font-weight: 500;
   padding-right: 1rem;
 
@@ -104,7 +106,7 @@ h1 {
 .empty h2 {
   font-size: 1.25rem;
   color: #f9d3b4;
-  font-family: var(--font-raleway);
+  font-family: var(--font-mukta);
 }
 
 .container {
@@ -121,6 +123,7 @@ h1 {
   width: 310px;
   height: 460px;
   margin: 1.5rem;
+  font-size: 16px;
 
   position: relative;
   border-radius: 12px;
@@ -178,7 +181,7 @@ img {
 
 .game div:nth-of-type(3) h3 {
   margin-top: 5px;
-  font-family: "Roboto Slab", serif;
+  font-family: "Mukta", serif;
   color: white;
 }
 
@@ -261,12 +264,22 @@ img {
 }
 
 .footer{
-  height: 256px;
+  /* height: 256px;
   width: 100vw;
-  background-color: #343739;
+  background-color: #343739; */
+
+  margin-top: 4%;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
   
   
 }
+
+a:visited { text-decoration: none; color:lightblue; }
+a:hover { text-decoration: none; color:blue; }
+a:focus { text-decoration: none; color:lightblue; }
+a:hover, a:active { text-decoration: none; color:darkslateblue }
 
 
 

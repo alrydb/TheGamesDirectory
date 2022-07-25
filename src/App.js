@@ -236,7 +236,12 @@ const App = () =>{
         
                             }
                             
-                            
+                            <div className='footer'>
+
+<p>Icons representing a games available platforms e.g Xbox, Playstation etc are downloaded from  <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8.com</a> </p>
+
+
+</div>
                
                     
                     </>
@@ -272,12 +277,7 @@ const App = () =>{
 
 
         </div>
-        <div className='footer'>
-
-        <p>Icons representing platforms e.g xbox, playstation etc downloaded from icons-8.</p>
-        <a href="https://icons8.com">Platform icons, e.g Playstation, Xbox, downloaded from Icons8.com</a> 
-
-        </div>
+      
         </>
     );
 }
