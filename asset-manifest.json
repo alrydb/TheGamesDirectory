@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/TheGamesDirectory/static/css/main.4ed8b1af.css",
+    "main.js": "/TheGamesDirectory/static/js/main.69a09ff0.js",
+    "index.html": "/TheGamesDirectory/index.html",
+    "static/media/search.svg": "/TheGamesDirectory/static/media/search.5c7cdb7c8749b2ab291f151c3af2a553.svg",
+    "main.4ed8b1af.css.map": "/TheGamesDirectory/static/css/main.4ed8b1af.css.map",
+    "main.69a09ff0.js.map": "/TheGamesDirectory/static/js/main.69a09ff0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ed8b1af.css",
+    "static/js/main.69a09ff0.js"
+  ]
+}
