@@ -74,7 +74,12 @@ const App = () =>{
     return (
         <>
         <div className='app'>
-            <h1>The Games Directory</h1>
+            <h1 onClick={()=>
+            {
+
+                searchgames('')
+
+            }}>The Games Directory</h1>
           
             {
                 loading ? (

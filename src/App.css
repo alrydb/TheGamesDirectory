@@ -32,17 +32,14 @@ body {
 h1 {
   font-size: 3rem;
   color: white;
-  /* letter-spacing: 0.9px;
-  background: linear-gradient(
-    90deg,
-    rgba(249, 211, 180, 1) 0%,
-    rgba(249, 211, 180, 0) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: fit-content; */
+ 
 }
+
+h1:hover {
+  cursor: pointer;
+ 
+}
+
 
 .search {
   width: 71%;
@@ -254,6 +251,8 @@ h1 {
   cursor:pointer;
   font-size: 18px;
   color: lightblue;
+  width: fit-content;
+  
 }
 
 .show-description:hover{

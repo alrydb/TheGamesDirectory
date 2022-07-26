@@ -13,6 +13,7 @@ const GameCard = ({game}) => {
     const [showImages, setShowImages] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const [gameDescription, setGamedescription] = useState(['']);
+    const[gameDeveloper, setGameDeveloper] = useState([''])
     const [showGameDescription, setShowGameDescription] = useState(false);
     const API = "https://api.rawg.io/api/games";
 
@@ -28,6 +29,9 @@ const GameCard = ({game}) => {
         // const description = parser.parseFromString(data.gameDescription, "text/html");
         // console.log(description.toString())
         setGamedescription(data.description);
+        setGameDeveloper(data.developers)
+
+        console.log(gameDeveloper)
 
 
     }
@@ -182,8 +186,9 @@ const GameCard = ({game}) => {
                                         <div style={showGameDescription && showInfo ? {display : 'none'} : !showGameDescription  && showInfo ? {visibility : 'visible'} : {visibility : 'collapse'}}>
                                         <p >Release date: {game.released !== null ? game.released : "N/A"}</p>
                                         {/* <p>Rating: {game.ratings[0] !== undefined ? game.ratings[0].title : "Not rated"}</p> */}
+                                        <p >Developers:  {gameDeveloper.length >= 2 ? gameDeveloper[0].name + ", " + gameDeveloper[1].name : gameDeveloper.length == 1 ? gameDeveloper[0].name : "N/A" } </p>
                                         <p >Metacritic score: {game.metacritic !== null ? game.metacritic : "N/A"}</p>
-                                        <p >Average playtime:  {game.playtime !== 0 ? game.playtime + " hour(s)" : "N/A"} </p>
+                                        
                                        
                                         </div>
 
