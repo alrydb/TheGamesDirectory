@@ -1,8 +1,7 @@
 import React from 'react';
 import OnImagesLoaded from 'react-on-images-loaded';
 import {useState} from 'react';
-import GameInfoCard from './GameInfoCard';
-import { useRef } from 'react'
+import { useRef } from 'react';
 
 
 
@@ -118,27 +117,27 @@ const GameCard = ({game}) => {
     
     
                                 p.push(<img key={i} style={{width:24,height:24, margin:4 }} title={game.platforms[i].platform.name} src={game.platforms[i].platform.name === "PC" ? 
-                                './icons/icons8-windows-10-30.png' : game.platforms[i].platform.name === "macOS" ? 
-                                './icons/icons8-apple-logo-64.png' : game.platforms[i].platform.name === "PlayStation 3" ?
-                                './icons/icons8-playstation-3-logo-48.png': game.platforms[i].platform.name === "PlayStation 2" ?
-                                './icons/icons8-ps2-50.png': game.platforms[i].platform.name === "Nintendo Switch" ?
-                                './icons/icons8-nintendo-switch-50.png': game.platforms[i].platform.name === "GameCube" ?
-                                './icons/icons8-the-nintendo-gamecube-24.png': game.platforms[i].platform.name === "Android" ?
-                                './icons/icons8-android-os-24.png': game.platforms[i].platform.name === "iOS" ?
-                                './icons/icons8-ios-logo-48.png': game.platforms[i].platform.name === "PlayStation 4" ?
-                                './icons/icons8-ps4-50.png': game.platforms[i].platform.name === "PlayStation 5" ?
-                                './icons/icons8-ps5-48.png' : game.platforms[i].platform.name === "Xbox" ?
-                                './icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Xbox 360" ?
-                                './icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Xbox One" ?
-                                './icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Xbox Series S/X" ?
-                                './icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Linux" ?
-                                './icons/icons8-linux-30.png' : game.platforms[i].platform.name === "Web" ?
-                                './icons/icons8-web-32.png' :
+                                'icons/icons8-windows-10-30.png' : game.platforms[i].platform.name === "macOS" ? 
+                                'icons/icons8-apple-logo-64.png' : game.platforms[i].platform.name === "PlayStation 3" ?
+                                'icons/icons8-playstation-3-logo-48.png': game.platforms[i].platform.name === "PlayStation 2" ?
+                                'icons/icons8-ps2-50.png': game.platforms[i].platform.name === "Nintendo Switch" ?
+                                'icons/icons8-nintendo-switch-50.png': game.platforms[i].platform.name === "GameCube" ?
+                                'icons/icons8-the-nintendo-gamecube-24.png': game.platforms[i].platform.name === "Android" ?
+                                'icons/icons8-android-os-24.png': game.platforms[i].platform.name === "iOS" ?
+                                'icons/icons8-ios-logo-48.png': game.platforms[i].platform.name === "PlayStation 4" ?
+                                'icons/icons8-ps4-50.png': game.platforms[i].platform.name === "PlayStation 5" ?
+                                'icons/icons8-ps5-48.png' : game.platforms[i].platform.name === "Xbox" ?
+                                'icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Xbox 360" ?
+                                'icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Xbox One" ?
+                                'icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Xbox Series S/X" ?
+                                'icons/icons8-xbox-30.png' : game.platforms[i].platform.name === "Linux" ?
+                                'icons/icons8-linux-30.png' : game.platforms[i].platform.name === "Web" ?
+                                'icons/icons8-web-32.png' :
     
                                 
                                 
                                 
-                                './icons/icons8-game-controller-30.png'}></img>);
+                                'icons/icons8-game-controller-30.png'}></img>);
                                 
                                 
                                 

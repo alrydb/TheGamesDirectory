@@ -368,6 +368,10 @@ a:hover, a:active { text-decoration: none; color:darkslateblue }
    
     width: 100%;
   }
+
+  .filters{
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 400px) {
