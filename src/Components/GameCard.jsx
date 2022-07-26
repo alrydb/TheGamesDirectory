@@ -2,11 +2,12 @@ import React from 'react';
 import OnImagesLoaded from 'react-on-images-loaded';
 import {useState} from 'react';
 import GameInfoCard from './GameInfoCard';
+import { useRef } from 'react'
 
 
 
 
-
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
 const GameCard = ({game}) => {
     const [showImages, setShowImages] = useState(false);
@@ -14,6 +15,9 @@ const GameCard = ({game}) => {
     const [gameDescription, setGamedescription] = useState(['']);
     const [showGameDescription, setShowGameDescription] = useState(false);
     const API = "https://api.rawg.io/api/games";
+
+    const myRef = useRef(null)
+    const executeScroll = () => scrollToRef(myRef)
 
 
     const getGameDescription = async(id) =>{
@@ -39,7 +43,7 @@ const GameCard = ({game}) => {
                 
                 <div className="container" >
 
-                    <div className={showInfo ? "game-info" : "game"}onClick={() => {
+                    <div  className={showInfo ? "game-info" : "game"}onClick={() => {
                         
                         if(!showInfo)
                         {
@@ -57,6 +61,7 @@ const GameCard = ({game}) => {
                                  if(showInfo)
                                  {
                                      setShowInfo(false)
+                                     setShowGameDescription(false)
                                  }
                              }}>
                                  x
@@ -156,23 +161,54 @@ const GameCard = ({game}) => {
 
             <div style={showInfo ? {visibility : 'visible'} : {visibility : 'hidden'}}>
                 
-                <div className='game-info-list'>
+                <div ref={myRef} className='game-info-list' style={showGameDescription ?  {overflow: 'scroll' } : {overflow: "hidden"}}>
                   
                 
-                        {/* {gameDescription.toString()} */}
-                        <p>Release date: {game.released !== null ? game.released : "N/A"}</p>
-                        <p>Rating: {game.ratings[0] !== undefined ? game.ratings[0].title : "Not rated"}</p>
-                        <p>Metacritic score: {game.metacritic !== null ? game.metacritic : "N/A"}</p>
-                        <p>Average playtime: {game.playtime !== 0 ? game.playtime + " hour(s)" : "N/A"}</p>
-                        <button onClick={() => {
+                <p dangerouslySetInnerHTML={showGameDescription ? { __html: "Hide description" } : { __html: "Show description" } } className='show-description' onClick={() => {
+                                        
 
-                        if(!showGameDescription)
-                        {
-                            setShowGameDescription(true)
-                        }
+                                        if (!showGameDescription) {
+                                            setShowGameDescription(true)
+                                        }
+                                        else
+                                        {
+                                            setShowGameDescription(false)
+                                        }
 
-                        }}>ggggggggg</button>
-                        <div className='game-info-description' dangerouslySetInnerHTML={{ __html: gameDescription }} style={showGameDescription ? {visibility : 'visible'} : {visibility : 'hidden'} }></div>
+                                        
+                                    }}></p>
+                                    
+
+                                        <div style={showGameDescription && showInfo ? {display : 'none'} : !showGameDescription  && showInfo ? {visibility : 'visible'} : {visibility : 'collapse'}}>
+                                        <p >Release date: {game.released !== null ? game.released : "N/A"}</p>
+                                        {/* <p>Rating: {game.ratings[0] !== undefined ? game.ratings[0].title : "Not rated"}</p> */}
+                                        <p >Metacritic score: {game.metacritic !== null ? game.metacritic : "N/A"}</p>
+                                        <p >Average playtime:  {game.playtime !== 0 ? game.playtime + " hour(s)" : "N/A"} </p>
+                                       
+                                        </div>
+
+                                        <div className='game-info-description' dangerouslySetInnerHTML={{ __html: gameDescription }} style={showGameDescription ? { visibility: 'visible' } : { visibility: 'collapse' }}>
+                                        
+                                        </div>
+    
+                                       
+
+                                     
+
+{/*                                      
+                                
+                                      
+                       
+                        
+                        {/* <p>About the game:</p> */}
+                                    
+                        {/* <div className='game-info-description' dangerouslySetInnerHTML={{ __html: gameDescription }}></div> */}
+                        
+                                    
+                                    
+                                     
+                        
+                       
                         
                 </div>
 
