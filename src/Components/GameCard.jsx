@@ -15,6 +15,7 @@ const GameCard = ({game}) => {
     const [gameDescription, setGamedescription] = useState(['']);
     const[gameDeveloper, setGameDeveloper] = useState([''])
     const [showGameDescription, setShowGameDescription] = useState(false);
+    const [gameDetails, setGameDetails] = useState(['']);
     const API = "https://api.rawg.io/api/games";
 
     const myRef = useRef(null)
@@ -30,6 +31,7 @@ const GameCard = ({game}) => {
         // console.log(description.toString())
         setGamedescription(data.description);
         setGameDeveloper(data.developers)
+        setGameDetails(data)
 
         console.log(gameDeveloper)
 
@@ -82,7 +84,7 @@ const GameCard = ({game}) => {
            
                 <img style={showImages ? {visibility : 'visible'} : {visibility : 'hidden'}} src={game.background_image !== 'N/A' ? game.background_image : 'https://via.placeholder.com/400' } alt={game.score}></img>
             </OnImagesLoaded> */}
-            <img src={game.background_image !== 'N/A' ? game.background_image : 'https://via.placeholder.com/400' } alt={game.score}></img>
+            <img src={game.background_image !== 'N/A' ? game.background_image : 'https://via.placeholder.com/400' } alt={"Image of the game"}></img>
             </div>
             
 
@@ -187,7 +189,7 @@ const GameCard = ({game}) => {
                                         <p >Release date: {game.released !== null ? game.released : "N/A"}</p>
                                         {/* <p>Rating: {game.ratings[0] !== undefined ? game.ratings[0].title : "Not rated"}</p> */}
                                         <p >Developers:  {gameDeveloper.length >= 2 ? gameDeveloper[0].name + ", " + gameDeveloper[1].name : gameDeveloper.length == 1 ? gameDeveloper[0].name : "N/A" } </p>
-                                        <p >Metacritic score: {game.metacritic !== null ? game.metacritic : "N/A"}</p>
+                                        <p >  Metacritic score: {gameDetails.metacritic !== null ? gameDetails.metacritic : "N/A"}</p>
                                         
                                        
                                         </div>
