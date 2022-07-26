@@ -4,7 +4,7 @@ import './app.css'
 import SearchIcon from './search.svg'
 import GameCard from './Components/GameCard';
 import ClipLoader from "react-spinners/ClipLoader";
-import CheckboxGroup from 'react-checkbox-group/lib/CheckboxGroup';
+
 
 
 
