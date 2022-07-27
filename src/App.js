@@ -14,13 +14,8 @@ const API_URL_GAMES = 'https://api.rawg.io/api/games?&key=' + API_KEY;
 
 const API_URL_DEVS = 'https://api.rawg.io/api/developers?&key=' + API_KEY;
 
-// const movie1 = {
-//     "Title": "Shrek",
-//     "Year": "2001",
-//     "imdbID": "tt0126029",
-//     "Type": "movie",
-//     "Poster": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-//   }
+
+const scrollToRef = () => window.scrollTo(0, 0)  
 
 const App = () =>{
 
@@ -28,10 +23,12 @@ const App = () =>{
 
     const [games, setgames] = useState([]);
     
-    const [images, setImages] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filters, setFilters] = useState([]);
     const [filtersVisible, setFiltersVisible] = useState(false);
+
+    
+    const executeScroll = () => scrollToRef()
 
     const searchgames = async (name) =>{
         setLoading(true)
@@ -94,23 +91,16 @@ const App = () =>{
 
                 : (
                     <>
-                            {/* <CheckboxGroup name="filters" value={filters} onChange={setFilters}>
-                                {(Checkbox) => (
-                                    <>
-                                        <label className='checkbox' style={{color:"white"}}>
-                                            <Checkbox value="game" /> Games
-                                        </label>
-                                        <label className='checkbox' style={{color:"white"}}>
-                                            <Checkbox value="developer" /> Developer
-                                        </label>
+                        
+                            <div className='home-button' onClick={() =>{
 
-                                    
+                                    executeScroll()
 
-                                        
-                                    
-                                    </>
-                                )}
-                            </CheckboxGroup> */}
+
+                            }}>
+                                <img src='icons/icons8-home-24.png' alt='image of a home'></img>
+                            </div>
+
 
                             <p className={filtersVisible ? "arrow up" : "arrow down"} onClick={() => {
                                 if (filtersVisible) {
@@ -243,7 +233,7 @@ const App = () =>{
                             
                             <div className='footer'>
 
-<p>Icons representing a games available platforms e.g Xbox, Playstation etc are downloaded from  <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8.com</a> </p>
+<p>All icons used are downloaded from  <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8.com</a> </p>
 
 
 </div>

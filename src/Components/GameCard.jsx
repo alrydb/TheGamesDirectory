@@ -6,10 +6,10 @@ import { useRef } from 'react';
 
 
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
+const scrollToRef = () => window.scrollTo(0, 0)  
 
 const GameCard = ({game}) => {
-    const [showImages, setShowImages] = useState(false);
+    
     const [showInfo, setShowInfo] = useState(false);
     const [gameDescription, setGamedescription] = useState(['']);
     const[gameDeveloper, setGameDeveloper] = useState([''])
@@ -25,14 +25,12 @@ const GameCard = ({game}) => {
 
         const response = await fetch(`${API}/${id}?&key=6a44dff3dffe463f8a65d367f3299ce0`);
         const data = await response.json();
-        // const parser = new DOMParser();
-        // const description = parser.parseFromString(data.gameDescription, "text/html");
-        // console.log(description.toString())
+       
         setGamedescription(data.description);
         setGameDeveloper(data.developers)
         setGameDetails(data)
 
-        console.log(gameDeveloper)
+        
 
 
     }
@@ -75,14 +73,7 @@ const GameCard = ({game}) => {
 
             <div className='game-image'>
                
-            {/* <OnImagesLoaded
-             onLoaded={() => setShowImages(true)}
-                //  onTimeout={() => this.setState({ showImages: true })}
-                //  timeout={7000}
-                    >
-           
-                <img style={showImages ? {visibility : 'visible'} : {visibility : 'hidden'}} src={game.background_image !== 'N/A' ? game.background_image : 'https://via.placeholder.com/400' } alt={game.score}></img>
-            </OnImagesLoaded> */}
+          
             <img src={game.background_image !== 'N/A' ? game.background_image : 'https://via.placeholder.com/400' } alt={"Image of the game"}></img>
             </div>
             
@@ -95,7 +86,7 @@ const GameCard = ({game}) => {
                 
                 }</span>
                 <h3>{game.name}</h3>
-                {/* <img style={{width:64,height:64 }} src={game.platforms[0].platform.name === "PC"  ? 'https://www.freeiconspng.com/thumbs/windows-icon-png/cute-ball-windows-icon-png-16.png' : 'https://via.placeholder.com/400' } alt={game.score}></img> */}
+            
                
 
  
@@ -107,13 +98,13 @@ const GameCard = ({game}) => {
                             
                     {(() => {
                         var p = [];
-                        // console.log(game.platforms[1].platform.name)
+                       
                     if(game.platforms != null)
                     {
                         for (let i = 0; i <= game.platforms.length; i++) {
-                            // console.log(game.platforms[i].platform.name)
+                            
                             try {
-                                // p.push(<td key={i}>{game.platforms[i].platform.name}</td>);
+                                
     
     
                                 p.push(<img key={i} style={{width:24,height:24, margin:4 }} title={game.platforms[i].platform.name} src={game.platforms[i].platform.name === "PC" ? 
@@ -166,11 +157,11 @@ const GameCard = ({game}) => {
 
             <div style={showInfo ? {visibility : 'visible'} : {visibility : 'hidden'}}>
                 
-                <div ref={myRef} className='game-info-list' style={showGameDescription ?  {overflow: 'scroll' } : {overflow: "hidden"}}>
+                <div className='game-info-list' style={showGameDescription ?  {overflow: 'scroll' } : {overflow: "hidden"}}>
                   
                 
                 <p dangerouslySetInnerHTML={showGameDescription ? { __html: "Hide description" } : { __html: "Show description" } } className='show-description' onClick={() => {
-                                        
+                                        executeScroll()
 
                                         if (!showGameDescription) {
                                             setShowGameDescription(true)
@@ -186,7 +177,7 @@ const GameCard = ({game}) => {
 
                                         <div style={showGameDescription && showInfo ? {display : 'none'} : !showGameDescription  && showInfo ? {visibility : 'visible'} : {visibility : 'collapse'}}>
                                         <p >Release date: {game.released !== null ? game.released : "N/A"}</p>
-                                        {/* <p>Rating: {game.ratings[0] !== undefined ? game.ratings[0].title : "Not rated"}</p> */}
+                                       
                                         <p >Developers:  {gameDeveloper.length >= 2 ? gameDeveloper[0].name + ", " + gameDeveloper[1].name : gameDeveloper.length == 1 ? gameDeveloper[0].name : "N/A" } </p>
                                         <p >  Metacritic score: {gameDetails.metacritic !== null ? gameDetails.metacritic : "N/A"}</p>
                                         
@@ -197,23 +188,7 @@ const GameCard = ({game}) => {
                                         
                                         </div>
     
-                                       
-
-                                     
-
-{/*                                      
-                                
-                                      
-                       
-                        
-                        {/* <p>About the game:</p> */}
-                                    
-                        {/* <div className='game-info-description' dangerouslySetInnerHTML={{ __html: gameDescription }}></div> */}
-                        
-                                    
-                                    
-                                     
-                        
+                   
                        
                         
                 </div>

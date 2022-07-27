@@ -332,6 +332,29 @@ h1:hover {
   
 }
 
+
+.home-button{
+  position: fixed;
+  top: 800px;
+  right: 100px;
+  width: 64px;
+  height: 64px;
+  display: none;
+ 
+  border-radius: 50%;
+  
+
+  background: #343739;
+  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+
+}
+
+.home-button img{
+  display: flex;
+  justify-content: center;
+}
+
 a:visited { text-decoration: none; color:lightblue; }
 a:hover { text-decoration: none; color:blue; }
 a:focus { text-decoration: none; color:lightblue; }
@@ -352,7 +375,7 @@ a:hover, a:active { text-decoration: none; color:darkslateblue }
   }
 
   .search input {
-    font-size: 1rem;
+    font-size: 14px;
   }
 
   .search img {
@@ -400,6 +423,22 @@ a:hover, a:active { text-decoration: none; color:darkslateblue }
   .filter-button{
     width: 12px;
   }
+
+  .search input {
+    font-size: 10px;
+  }
+
+  
+.home-button{
+  
+  top: 700px;
+  right: 1px;
+  width: 64px;
+  height: 64px;
+  z-index: 10;
+  display: inline-block;
+
+}
   
 }
 
