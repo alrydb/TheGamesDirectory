@@ -1,3 +1,5 @@
+# The Games Directory
+
 Mitt första projekt skapat med React.
 
 The Games Directory är en hemsida där man kan söka på speltitlar, eller spelutvecklare, och se inforamtion om saker som lanseringsdatum, en beskrivning av spelet, metacrtitic poäng m.m för varje spel.
