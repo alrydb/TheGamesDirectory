@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/TheGamesDirectory/static/css/main.968433bd.css",
-    "main.js": "/TheGamesDirectory/static/js/main.113aae7c.js",
+    "main.css": "/TheGamesDirectory/static/css/main.f144278b.css",
+    "main.js": "/TheGamesDirectory/static/js/main.7e673557.js",
     "index.html": "/TheGamesDirectory/index.html",
     "static/media/search.svg": "/TheGamesDirectory/static/media/search.5c7cdb7c8749b2ab291f151c3af2a553.svg",
-    "main.968433bd.css.map": "/TheGamesDirectory/static/css/main.968433bd.css.map",
-    "main.113aae7c.js.map": "/TheGamesDirectory/static/js/main.113aae7c.js.map"
+    "main.f144278b.css.map": "/TheGamesDirectory/static/css/main.f144278b.css.map",
+    "main.7e673557.js.map": "/TheGamesDirectory/static/js/main.7e673557.js.map"
   },
   "entrypoints": [
-    "static/css/main.968433bd.css",
-    "static/js/main.113aae7c.js"
+    "static/css/main.f144278b.css",
+    "static/js/main.7e673557.js"
   ]
 }
