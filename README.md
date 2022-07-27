@@ -6,4 +6,4 @@ The Games Directory är en hemsida där man kan söka på speltitlar, eller spel
 
 All data hämtas från https://api.rawg.io/docs/ och ikonerna är hämtade från https://icons8.com/
 
-(https://alrydb.github.io/TheGamesDirectory/ "Länk till hemsidan")
+[Länk till hemsidan](https://alrydb.github.io/TheGamesDirectory/)
