@@ -161,7 +161,7 @@ const GameCard = ({game}) => {
                   
                 
                 <p dangerouslySetInnerHTML={showGameDescription ? { __html: "Hide description" } : { __html: "Show description" } } className='show-description' onClick={() => {
-                                        executeScroll()
+                                       
 
                                         if (!showGameDescription) {
                                             setShowGameDescription(true)
